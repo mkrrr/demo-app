@@ -1,0 +1,8 @@
+Tasks for team Gent: 
+ - Add 2 new questions 
+ - Add 2 answers for these questions 
+ - Make a change in the makefile, e.g. change the compiler flags e.g. the C standard version 
+ - Change the string that contain "commands" to "questions" 
+ - Add a header to the answers  
+ - Add a bash script that will run the python script with some arbitrary arguments
+
