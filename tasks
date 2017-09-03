@@ -1,0 +1,7 @@
+Tasks for team leuven:
+ - Add 2 new questions
+ - Add 2 answers for these questions
+ - Add something to the unit tests (a new test, a real test, printf)
+ - Add input validation to the python script
+ - Add a bash script that will run the answer daemon with some arbitrary arguments
+ - Make a change in the makefile, e.g. change the compiler flags e.g. the C standard version
