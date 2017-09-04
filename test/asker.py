@@ -13,6 +13,8 @@ questions = [
     "Do you like coffee?",
     "Do you like chocolate",
     "How was your first day at altran?",
+    "What's the answer to life, the universe and everything?",
+    "What's your favorite food?",
 ]
 
 g_sock = -1
@@ -61,6 +63,10 @@ print 'To terminate, press CTRL-Z'
 signal.signal(signal.SIGHUP, cleanup)
 signal.signal(signal.SIGTERM, cleanup)
 signal.signal(signal.SIGTSTP, cleanup)
+
+if args.question >= len(questions):
+    print "There are only " + str(len(questions)) + " questions"
+    exit(42)
 
 if args.question >= 0:
     ret = ask(args.question, args.host, args.port)
