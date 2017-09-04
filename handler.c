@@ -31,7 +31,7 @@ void handler_cmd(void *priv, const char *cmd, char *response, int resp_len)
     }else if(strncmp(cmd, LIKE_COFFEE, strlen(LIKE_COFFEE)) == 0){
         sprintf(response, "Of course!");
     }else if(strncmp(cmd, FIX, strlen(FIX)) == 0){
-        sprintf(response, "Allright then");
+        sprintf(response, "Alright then");
     }else if(strncmp(cmd, LIKE_CHOCOLOTE, strlen(FIX)) == 0){
         sprintf(response, "Yes, I prefer milk chocolate over pure");
     }else if(strncmp(cmd, FIRST_DAY, strlen(FIX)) == 0){
@@ -40,7 +40,7 @@ void handler_cmd(void *priv, const char *cmd, char *response, int resp_len)
         h->cmds_rcv_err++;
         sprintf(response, "Wuuuuut?");
     }
-}  
+}
 
 void * cmd_handler_init()
 {

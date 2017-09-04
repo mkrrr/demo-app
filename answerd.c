@@ -1,11 +1,12 @@
 /*
  * =====================================================================================
  *
- * Demo app 
+ * Demo app
+ *
+ * Some random header information about this file
  *
  * =====================================================================================
  */
-      
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -17,17 +18,17 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-      
+
 #include <sys/wait.h>
 #include <signal.h>
 
 #include "os.h"
 #include "handler.h"
-                                       
+
 static void sigchld_handler(int s)
 {
     while(waitpid(-1, NULL, WNOHANG) > 0);
-}     
+}
 
 static void print_usage()
 {
@@ -35,7 +36,7 @@ static void print_usage()
             "-h, Print this help message\n"
             "-b, Run as a daemon in background\n");
 }
-          
+
 #define MAX_CONN 10
 
 void *get_in_addr(struct sockaddr *sa)
@@ -87,14 +88,14 @@ static void accept_conn(int sock, void *cmd_handler)
         fd = accept(sock, (struct sockaddr *) &peer, &peer_sz);
         if(fd == -1){
             perror("accept");
-            continue;            
+            continue;
         }
         inet_ntop(peer.ss_family, get_in_addr((struct sockaddr *)&peer), s, sizeof s);
         printf("Got connection from %s\r\n", s);
         if(!fork()){
             char buf[MAX_CMD_SIZE];
             char response[MAX_CMD_SIZE];
-            close(sock);  
+            close(sock);
             while(1){
                 int nbytes = 0;
                 memset(buf, 0, sizeof buf);
@@ -129,9 +130,9 @@ static void accept_conn(int sock, void *cmd_handler)
         close(fd);
     }
 }
- 
+
 int main(int argc, char **argv)
-{   
+{
     void *cmd_handler;
     struct sigaction sa;
     int app_opts = 0;
@@ -163,8 +164,8 @@ int main(int argc, char **argv)
             printf("Error, could not daemonize\r\n");
             exit(EXIT_FAILURE);
         }
-    } 
-    
+    }
+
     sa.sa_handler = sigchld_handler;
     sigemptyset(&sa.sa_mask);
     sa.sa_flags = SA_RESTART;
@@ -187,4 +188,4 @@ int main(int argc, char **argv)
     cmd_handler_deinit(cmd_handler);
 
     return 0;
-}              
+}
