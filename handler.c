@@ -32,7 +32,7 @@ void handler_cmd(void *priv, const char *cmd, char *response, int resp_len)
         sprintf(response, "Of course!");
     }else if(strncmp(cmd, FIX, strlen(FIX)) == 0){
         sprintf(response, "Alright then");
-    }else if(strncmp(cmd, LIKE_CHOCOLOTE, strlen(FIX)) == 0){
+    }else if(strncmp(cmd, LIKE_CHOCOLATE, strlen(FIX)) == 0){
         sprintf(response, "Yes, I prefer milk chocolate over pure");
     }else if(strncmp(cmd, FIRST_DAY, strlen(FIX)) == 0){
         sprintf(response, "It was very interesting. Especially the demo's");
