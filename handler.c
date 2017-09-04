@@ -9,6 +9,8 @@
 #define LIKE_CHEESE "Do you like cheese?"
 #define LIKE_COFFEE "Do you like coffee?"
 #define FIX "Will you fix this bug on the master branch now please?"
+#define LIKE_TWIX "Do you like Twix?"
+#define LIke_BOUNTY "Do you like Bounty?"
 
 struct handler{
     int cmds_rcv;
@@ -30,6 +32,10 @@ void handler_cmd(void *priv, const char *cmd, char *response, int resp_len)
         sprintf(response, "Of course!");
     }else if(strncmp(cmd, FIX, strlen(FIX)) == 0){
         sprintf(response, "Allright then");
+    }else if(strncmp(cmd, FIX, strlen(FIX)) == 0){
+        sprintf(response, "Twixxxx for life");
+    }else if(strncmp(cmd, FIX, strlen(FIX)) == 0){
+        sprintf(response, "Bountyyyyyyyy");
     }else{
         h->cmds_rcv_err++;
         sprintf(response, "Wuuuuut?");
