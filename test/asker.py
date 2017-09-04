@@ -11,6 +11,8 @@ questions = [
     "Does god exist?",
     "Why do we have to learn about git?",
     "Do you like coffee?",
+    "What's the answer to life, the universe and everything?",
+    "What's your favorite food?",
 ]
 
 g_sock = -1
