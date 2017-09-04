@@ -32,7 +32,7 @@ static void sigchld_handler(int s)
 
 static void print_usage()
 {
-    printf("Usage:\n-p [PORT], TCP port to listen for commands\n"
+    printf("Usage:\n-p [PORT], TCP port to listen for questions\n"
             "-h, Print this help message\n"
             "-b, Run as a daemon in background\n");
 }
