@@ -60,6 +60,10 @@ signal.signal(signal.SIGHUP, cleanup)
 signal.signal(signal.SIGTERM, cleanup)
 signal.signal(signal.SIGTSTP, cleanup)
 
+if args.question >= len(questions):
+    print "There are only " + str(len(questions)) + " questions"
+    exit(42)
+
 if args.question >= 0:
     ret = ask(args.question, args.host, args.port)
     exit(ret)
