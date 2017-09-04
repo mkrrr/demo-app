@@ -1,6 +1,6 @@
 CC=$(CROSS_COMPILER)gcc
 LD=$(CROSS_COMPILER)ld
-CFLAGS=-Wall -Werror
+CFLAGS=-Wall -Werror -std=c99 
 OBJ = handler.o os.o answerd.o  
 CHECK_OBJS = test/unit/unit_main.o test/unit/unit_handler.o
 
